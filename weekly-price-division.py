@@ -11,6 +11,7 @@ df_new = pd.concat([df08,df09,df10,df11,df12],ignore_index =True)
 # 数据清洗
 #对异常值进行处理
 df_new = df_new[(df_new.数量>0)&(df_new.销售价格>0)]
+df_new = df_new[df_new[u'货品名称'].isin([u'牛仔裤'])]
 df_new = df_new.dropna(axis = 0)
 # 去掉不必要的数据列
 df_new = df_new.drop(['店铺编号','店铺地址','店铺简称','货号','货品名称','颜色编号','颜色说明','尺码','销售价格'],axis = 1)
